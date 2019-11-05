@@ -1,15 +1,14 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
- * Class PickupItemDetail
+ * Class PickupItem
  * @package DigitalCloud\Aramex\API\Classes
  */
-class PickupItemDetail implements Normalize
+class PickupItem implements Normalize
 {
     private $productGroup;
     private $productType;
@@ -37,9 +36,9 @@ class PickupItemDetail implements Normalize
      * DOM = Domestic
      *
      * @param string $productGroup
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setProductGroup(string $productGroup): PickupItemDetail
+    public function setProductGroup(string $productGroup): PickupItem
     {
         $this->productGroup = $productGroup;
         return $this;
@@ -60,9 +59,9 @@ class PickupItemDetail implements Normalize
      * Refer to Appendix A for a list of ProductTypes and their Product Groups
      *
      * @param string $productType
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setProductType(string $productType): PickupItemDetail
+    public function setProductType(string $productType): PickupItem
     {
         $this->productType = $productType;
         return $this;
@@ -80,9 +79,9 @@ class PickupItemDetail implements Normalize
      * Number of shipment
      *
      * @param int $numberOfShipments
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setNumberOfShipments(int $numberOfShipments): PickupItemDetail
+    public function setNumberOfShipments(int $numberOfShipments): PickupItem
     {
         $this->numberOfShipments = $numberOfShipments;
         return $this;
@@ -102,7 +101,7 @@ class PickupItemDetail implements Normalize
      * Options: P,C,3
      *
      * @param string $packageType
-     * @return PickupItemDetail
+     * @return PickupItem
      */
     public function setPackageType(string $packageType)
     {
@@ -120,9 +119,9 @@ class PickupItemDetail implements Normalize
 
     /**
      * @param string $payment
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setPayment(string $payment): PickupItemDetail
+    public function setPayment(string $payment): PickupItem
     {
         $this->payment = $payment;
         return $this;
@@ -141,9 +140,9 @@ class PickupItemDetail implements Normalize
      * Refer to Appendix B for more details
      *
      * @param Weight $shipmentWeight
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setShipmentWeight(Weight $shipmentWeight): PickupItemDetail
+    public function setShipmentWeight(Weight $shipmentWeight): PickupItem
     {
         $this->shipmentWeight = $shipmentWeight;
         return $this;
@@ -163,9 +162,9 @@ class PickupItemDetail implements Normalize
      * MAX = 100
      *
      * @param Volume $shipmentVolume
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setShipmentVolume(Volume $shipmentVolume): PickupItemDetail
+    public function setShipmentVolume(Volume $shipmentVolume): PickupItem
     {
         $this->shipmentVolume = $shipmentVolume;
         return $this;
@@ -183,9 +182,9 @@ class PickupItemDetail implements Normalize
      * Number of shipment pieces
      *
      * @param int $numberOfPieces
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setNumberOfPieces(int $numberOfPieces): PickupItemDetail
+    public function setNumberOfPieces(int $numberOfPieces): PickupItem
     {
         $this->numberOfPieces = $numberOfPieces;
         return $this;
@@ -201,9 +200,9 @@ class PickupItemDetail implements Normalize
 
     /**
      * @param Money $cashAmount
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setCashAmount(Money $cashAmount): PickupItemDetail
+    public function setCashAmount(Money $cashAmount): PickupItem
     {
         $this->cashAmount = $cashAmount;
         return $this;
@@ -219,9 +218,9 @@ class PickupItemDetail implements Normalize
 
     /**
      * @param Money $extraCharges
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setExtraCharges(Money $extraCharges): PickupItemDetail
+    public function setExtraCharges(Money $extraCharges): PickupItem
     {
         $this->extraCharges = $extraCharges;
         return $this;
@@ -240,9 +239,9 @@ class PickupItemDetail implements Normalize
      * If any of the Dimensional values are filled then the rest must be filled.
      *
      * @param Dimension $shipmentDimensions
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setShipmentDimensions(Dimension $shipmentDimensions): PickupItemDetail
+    public function setShipmentDimensions(Dimension $shipmentDimensions): PickupItem
     {
         $this->shipmentDimensions = $shipmentDimensions;
         return $this;
@@ -260,9 +259,9 @@ class PickupItemDetail implements Normalize
      * Any Comments on the Item being picked up.
      *
      * @param string $comments
-     * @return PickupItemDetail
+     * @return PickupItem
      */
-    public function setComments(string $comments): PickupItemDetail
+    public function setComments(string $comments): PickupItem
     {
         $this->comments = $comments;
         return $this;

@@ -35,7 +35,8 @@ class Pickup implements Normalize
     }
 
     /**
-     * Pickup Address
+     * Pickup Address.
+     *
      * @param Address $pickupAddress
      * @return Pickup
      */
@@ -182,7 +183,8 @@ class Pickup implements Normalize
     }
 
     /**
-     * Any general detail the customer would like to add about the shipment
+     * Any general detail the customer would like to add about the shipment.
+     *
      * @param string $reference1
      * @return Pickup
      */
@@ -201,7 +203,8 @@ class Pickup implements Normalize
     }
 
     /**
-     * Any general detail the customer would like to add about the shipment
+     * Any general detail the customer would like to add about the shipment.
+     *
      * @param string $reference2
      * @return Pickup
      */
@@ -221,6 +224,7 @@ class Pickup implements Normalize
 
     /**
      * Type of Vehicle requested to transport the shipments.
+     *
      * @param string $vehicle
      * @return Pickup
      */
@@ -249,7 +253,7 @@ class Pickup implements Normalize
     }
 
     /**
-     * @return PickupItemDetail[]
+     * @return PickupItem[]
      */
     public function getPickItems(): array
     {
@@ -257,7 +261,7 @@ class Pickup implements Normalize
     }
 
     /**
-     * @param PickupItemDetail[] $pickItems
+     * @param PickupItem[] $pickItems
      * @return Pickup
      */
     public function setPickItems(array $pickItems)
@@ -275,6 +279,7 @@ class Pickup implements Normalize
     }
 
     /**
+     * Ready or Pending
      * Pending: more information about the pickup needs to be added,
      * Ready: no further information is needed and the pickup request is ready to be assigned.
      *
