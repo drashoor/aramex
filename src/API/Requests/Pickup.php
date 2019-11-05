@@ -11,13 +11,13 @@ use DigitalCloud\Aramex\API\Response\RateResponse;
 use DigitalCloud\Aramex\API\Response\ShippingResponse;
 use Exception;
 
-class Shipping extends API implements Normalize
+class Pickup extends API implements Normalize
 {
     private $shipments;
     private $labelInfo;
 
-    protected $live_wsdl = 'https://ws.aramex.net/ShippingAPI.V2/Shipping/Service_1_0.svc?wsdl';
-    protected $test_wsdl = 'https://ws.aramex.net/ShippingAPI.V2/Shipping/Service_1_0.svc?wsdl';
+    protected $live_wsdl = 'https://ws.aramex.net/shippingapi.v2/shipping/service_1_0.svc?wsdl';
+    protected $test_wsdl = 'https://ws.dev.aramex.net/shippingapi.v2/shipping/service_1_0.svc?wsdl';
 
     /**
      * @return RateResponse
@@ -27,7 +27,7 @@ class Shipping extends API implements Normalize
     {
         $this->validate();
 
-        return ShippingResponse::make($this->soapClient->CreateShipments($this->normalize()));
+        return ShippingResponse::make($this->soapClient->CreatePickup($this->normalize()));
     }
 
     protected function validate()
@@ -86,7 +86,7 @@ class Shipping extends API implements Normalize
     public function normalize(): array
     {
         return array_merge([
-            'Shipments' => $this->getShipments() ? array_map(function ($item) {
+            'Pickup' => $this->getShipments() ? array_map(function ($item) {
                 return $item->normalize();
             }, $this->getShipments()) : [],
             'LabelInfo' => optional($this->getLabelInfo())->normalize(),
