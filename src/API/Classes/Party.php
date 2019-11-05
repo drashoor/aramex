@@ -16,17 +16,18 @@ class Party implements Normalize
     /**
      * @return string
      */
-    public function getReference1()
+    public function getReference1(): string
     {
         return $this->reference1;
     }
 
     /**
      * Any details the client would like to add that will be sent back in the response.
+     *
      * @param string $reference1
      * @return $this
      */
-    public function setReference1(string $reference1)
+    public function setReference1(string $reference1): Party
     {
         $this->reference1 = $reference1;
         return $this;
@@ -42,10 +43,11 @@ class Party implements Normalize
 
     /**
      * Any details the client would like to add that will be sent back in the response.
+     *
      * @param string $reference2
-     * @return $this
+     * @return Party
      */
-    public function setReference2(string $reference2)
+    public function setReference2(string $reference2): Party
     {
         $this->reference2 = $reference2;
         return $this;
@@ -61,6 +63,7 @@ class Party implements Normalize
 
     /**
      * The Same Account number entered in the Client Info
+     *
      * @param string $accountNumber
      * @return $this
      */
@@ -70,7 +73,7 @@ class Party implements Normalize
         return $this;
     }
 
-//    public function useClientAccountNumberasAccountNumber()
+//    public function useClientAccountNumberAsAccountNumber()
 //    {
 //        return $this->setAccountNumber('');
 //    }
@@ -78,16 +81,16 @@ class Party implements Normalize
     /**
      * @return Address
      */
-    public function getPartyAddress()
+    public function getPartyAddress(): Address
     {
         return $this->partyAddress;
     }
 
     /**
      * @param Address $partyAddress
-     * @return $this
+     * @return Party
      */
-    public function setPartyAddress(Address $partyAddress)
+    public function setPartyAddress(Address $partyAddress): Party
     {
         $this->partyAddress = $partyAddress;
         return $this;
@@ -96,14 +99,14 @@ class Party implements Normalize
     /**
      * @return Contact
      */
-    public function getContact()
+    public function getContact(): Contact
     {
         return $this->contact;
     }
 
     /**
      * @param Contact $contact
-     * @return $this
+     * @return Party
      */
     public function setContact(Contact $contact)
     {

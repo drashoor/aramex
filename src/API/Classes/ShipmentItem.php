@@ -18,7 +18,7 @@ class ShipmentItem implements Normalize
     /**
      * @return string
      */
-    public function getPackageType()
+    public function getPackageType(): string
     {
         return $this->packageType;
     }
@@ -37,7 +37,7 @@ class ShipmentItem implements Normalize
     /**
      * @return int
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->quantity;
     }
@@ -56,7 +56,7 @@ class ShipmentItem implements Normalize
     /**
      * @return Weight
      */
-    public function getWeight()
+    public function getWeight(): Weight
     {
         return $this->weight;
     }
@@ -75,7 +75,7 @@ class ShipmentItem implements Normalize
     /**
      * @return string
      */
-    public function getComments()
+    public function getComments(): string
     {
         return $this->comments;
     }
@@ -91,11 +91,10 @@ class ShipmentItem implements Normalize
         return $this;
     }
 
-
     /**
      * @return string
      */
-    public function getReference()
+    public function getReference(): string
     {
         return $this->reference;
     }

@@ -22,6 +22,8 @@ class Transaction implements Normalize
     }
 
     /**
+     * Any details the user would like to add that will be sent back in the response.
+     *
      * @param string $reference1
      * @return $this
      */
@@ -40,6 +42,8 @@ class Transaction implements Normalize
     }
 
     /**
+     * Any details the user would like to add that will be sent back in the response.
+     *
      * @param string $reference2
      * @return $this
      */
@@ -58,6 +62,8 @@ class Transaction implements Normalize
     }
 
     /**
+     * Any details the user would like to add that will be sent back in the response.
+     *
      * @param string $reference3
      * @return $this
      */
@@ -76,6 +82,8 @@ class Transaction implements Normalize
     }
 
     /**
+     * Any details the user would like to add that will be sent back in the response.
+     *
      * @param string $reference4
      * @return $this
      */
@@ -94,6 +102,8 @@ class Transaction implements Normalize
     }
 
     /**
+     * Any details the user would like to add that will be sent back in the response.
+     *
      * @param string $reference5
      * @return $this
      */
@@ -123,7 +133,11 @@ class Transaction implements Normalize
         if (!$obj)
             return new self();
 
-        return (new self())->setReference1($obj->Reference1)->setReference2($obj->Reference2)
-            ->setReference3($obj->Reference3)->setReference4($obj->Reference4)->setReference5($obj->Reference4);
+        return (new self())
+            ->setReference1($obj->Reference1)
+            ->setReference2($obj->Reference2)
+            ->setReference3($obj->Reference3)
+            ->setReference4($obj->Reference4)
+            ->setReference5($obj->Reference4);
     }
 }

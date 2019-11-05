@@ -33,6 +33,8 @@ class Address implements Normalize
 
     /**
      * Additional Address information, such as the building number, block, street name.
+     * More than 3 characters
+     *
      * @param string $line1
      * @return $this
      */
@@ -45,13 +47,14 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getLine2()
+    public function getLine2(): string
     {
         return $this->line2;
     }
 
     /**
      * Additional Address information.
+     *
      * @param string $line2
      * @return $this
      */
@@ -64,13 +67,14 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getLine3()
+    public function getLine3(): string
     {
         return $this->line3;
     }
 
     /**
      * Additional Address information.
+     *
      * @param string $line3
      * @return $this
      */
@@ -82,14 +86,18 @@ class Address implements Normalize
 
     /**
      * Address City. Conditional: Required if the post code is not given.
+     *
      * @return string
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->city;
     }
 
     /**
+     * Address City.
+     * Conditional: Required if the post code is not given.
+     *
      * @param string $city
      * @return $this
      */
@@ -102,13 +110,15 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getStateOfProvinceCode()
+    public function getStateOfProvinceCode(): string
     {
         return $this->stateOfProvinceCode;
     }
 
     /**
-     * Address State or province code. Required if The country code and city require a State or Province Code
+     * Address State or province code.
+     * Required if The country code and city require a State or Province Code
+     *
      * @param string $stateOfProvinceCode
      * @return $this
      */
@@ -121,13 +131,15 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getPostCode()
+    public function getPostCode(): string
     {
         return $this->postCode;
     }
 
     /**
      * Postal Code, if there is a postal code in the country code and city then it must be given.
+     * If there are multiple cities for the same post code, the list of cities will be returned in the response.
+     *
      * @param string $postCode
      * @return $this
      */
@@ -140,13 +152,14 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
 
     /**
      * 2-Letter Standard ISO Country Code.
+     *
      * @param string $countryCode
      * @return $this
      */
@@ -159,7 +172,7 @@ class Address implements Normalize
     /**
      * @return float
      */
-    public function getLongitude()
+    public function getLongitude(): float
     {
         return $this->longitude;
     }
@@ -177,7 +190,7 @@ class Address implements Normalize
     /**
      * @return float
      */
-    public function getLatitude()
+    public function getLatitude(): float
     {
         return $this->latitude;
     }
@@ -195,7 +208,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getBuildingNumber()
+    public function getBuildingNumber(): string
     {
         return $this->buildingNumber;
     }
@@ -213,7 +226,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getBuildingName()
+    public function getBuildingName(): string
     {
         return $this->buildingName;
     }
@@ -231,7 +244,7 @@ class Address implements Normalize
     /**
      * @return int
      */
-    public function getFloor()
+    public function getFloor(): int
     {
         return $this->floor;
     }
@@ -249,7 +262,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getApartment()
+    public function getApartment(): string
     {
         return $this->apartment;
     }
@@ -268,7 +281,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getPoBox()
+    public function getPoBox(): string
     {
         return $this->poBox;
     }
@@ -286,7 +299,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -300,7 +313,6 @@ class Address implements Normalize
         $this->description = $description;
         return $this;
     }
-
 
     public function normalize(): array
     {

@@ -40,6 +40,7 @@ class Shipment implements Normalize
 
     /**
      * Any general detail the customer would like to add about the shipment
+     *
      * @param string $reference1
      * @return $this
      */
@@ -59,6 +60,7 @@ class Shipment implements Normalize
 
     /**
      * Any general detail the customer would like to add about the shipment
+     *
      * @param string $reference2
      * @return $this
      */
@@ -78,6 +80,7 @@ class Shipment implements Normalize
 
     /**
      * Any general detail the customer would like to add about the shipment
+     *
      * @param string $reference3
      * @return $this
      */
@@ -151,6 +154,7 @@ class Shipment implements Normalize
 
     /**
      * The date aramex receives the shipment to be shipped out.
+     *
      * @param int $shippingDateTime
      * @return $this
      */
@@ -170,6 +174,7 @@ class Shipment implements Normalize
 
     /**
      * The date specified for shipment to be delivered to the consignee.
+     *
      * @param int $dueDate
      * @return $this
      */
@@ -188,7 +193,8 @@ class Shipment implements Normalize
     }
 
     /**
-     * Any comments on the shipment
+     * Any comments on the shipment.
+     *
      * @param string $comments
      * @return $this
      */
@@ -208,6 +214,7 @@ class Shipment implements Normalize
 
     /**
      * The location from where the shipment should be picked up, such as the reception desk.
+     *
      * @param string $pickupLocation
      * @return $this
      */
@@ -226,7 +233,8 @@ class Shipment implements Normalize
     }
 
     /**
-     * Instructions on how to handle the shipment
+     * Instructions on how to handle the shipment.
+     *
      * @param string $operationsInstructions
      * @return $this
      */
@@ -246,6 +254,7 @@ class Shipment implements Normalize
 
     /**
      * Instructions on how to handle payment specifics.
+     *
      * @param string $accountingInstructions
      * @return $this
      */
@@ -312,6 +321,7 @@ class Shipment implements Normalize
 
     /**
      * Client’s shipment number if present. If filled this field must be unique for each shipment.
+     *
      * @param string $foreignHAWB
      * @return $this
      */
@@ -351,7 +361,10 @@ class Shipment implements Normalize
     }
 
     /**
-     * If shipment numbers are required to be entered manually then aramex operations will provide a stock range from which to fill this field with. Otherwise if empty a number will be assigned to the created shipment automatically and returned in the response.
+     * If shipment numbers are required to be entered manually
+     * then aramex operations will provide a stock range from which to fill this field with.
+     * Otherwise if empty a number will be assigned to the created shipment automatically and returned in the response.
+     *
      * @param string $number
      * @return $this
      */
@@ -363,6 +376,7 @@ class Shipment implements Normalize
 
     /**
      * To add Shipments to existing pickups.
+     *
      * @return string
      */
     public function getPickupGUID(): string
@@ -372,6 +386,7 @@ class Shipment implements Normalize
 
     /**
      * A valid GUID value, provided by the Pickup Creation Response
+     *
      * @param string $pickupGUID
      * @return $this
      */
