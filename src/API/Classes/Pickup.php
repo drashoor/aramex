@@ -35,6 +35,7 @@ class Pickup implements Normalize
     }
 
     /**
+     * Pickup Address
      * @param Address $pickupAddress
      * @return Pickup
      */
@@ -107,19 +108,21 @@ class Pickup implements Normalize
     }
 
     /**
-     * @param mixed $readyTime
+     * Ready time should always be before latest and closingtime.
+     * Date should not be before the current day or more than seven days in advance of the current date.
+     * @param DateTime $readyTime
      * @return Pickup
      */
-    public function setReadyTime($readyTime)
+    public function setReadyTime(DateTime $readyTime)
     {
         $this->readyTime = $readyTime;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return DateTime
      */
-    public function getLastPickupTime()
+    public function getLastPickupTime(): DateTime
     {
         return $this->lastPickupTime;
     }
@@ -179,6 +182,7 @@ class Pickup implements Normalize
     }
 
     /**
+     * Any general detail the customer would like to add about the shipment
      * @param string $reference1
      * @return Pickup
      */
@@ -197,6 +201,7 @@ class Pickup implements Normalize
     }
 
     /**
+     * Any general detail the customer would like to add about the shipment
      * @param string $reference2
      * @return Pickup
      */
@@ -215,6 +220,7 @@ class Pickup implements Normalize
     }
 
     /**
+     * Type of Vehicle requested to transport the shipments.
      * @param string $vehicle
      * @return Pickup
      */
@@ -270,6 +276,8 @@ class Pickup implements Normalize
     }
 
     /**
+     * Pending:more information about the pickup needs to be added,
+     * Ready: no further information is needed and the pickup request is ready to be assigned.
      * @param string $status
      * @return Pickup
      */

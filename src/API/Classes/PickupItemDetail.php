@@ -33,6 +33,9 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * EXP = Express
+     * DOM = Domestic
+     *
      * @param string $productGroup
      * @return PickupItemDetail
      */
@@ -51,6 +54,11 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Product Type
+     * involves the specification of certain features concerning the delivery of the product such as:
+     * Priority, Time Sensitivity, and whether it is a Document or Non-Document.
+     * Refer to Appendix A for a list of ProductTypes and their Product Groups
+     *
      * @param string $productType
      * @return PickupItemDetail
      */
@@ -69,6 +77,8 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Number of shipment
+     *
      * @param int $numberOfShipments
      * @return PickupItemDetail
      */
@@ -87,6 +97,10 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Type of packaging, for example.
+     * Cans, bottles, degradable Plastic.
+     * Options: P,C,3
+     *
      * @param string $packageType
      * @return PickupItemDetail
      */
@@ -123,6 +137,9 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Method of payment for shipment.
+     * Refer to Appendix B for more details
+     *
      * @param Weight $shipmentWeight
      * @return PickupItemDetail
      */
@@ -141,6 +158,10 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Volume of the Shipment
+     * Pieces > 0
+     * MAX = 100
+     *
      * @param mixed $shipmentVolume
      * @return PickupItemDetail
      */
@@ -159,6 +180,8 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Number of shipment pieces
+     *
      * @param int $numberOfPieces
      * @return PickupItemDetail
      */
@@ -213,6 +236,9 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Measurements required in calculating the Chargeable Weight,
+     * If any of the Dimensional values are filled then the rest must be filled.
+     *
      * @param Dimension $shipmentDimensions
      * @return PickupItemDetail
      */
@@ -231,6 +257,8 @@ class PickupItemDetail implements Normalize
     }
 
     /**
+     * Any Comments on the Item being picked up.
+     *
      * @param string $comments
      * @return PickupItemDetail
      */
@@ -254,9 +282,9 @@ class PickupItemDetail implements Normalize
             'ShipmentWeight' => $this->getShipmentWeight(),
             'ShipmentVolume' => $this->getShipmentVolume(),
             'NumberOfPieces' => $this->getNumberOfPieces(),
-            'CashAmount' => $this->getCashAmount(),
-            'ExtraCharges' => $this->getExtraCharges(),
-            'ShipmentDimensions' => $this->getShipmentDimensions(),
+            'CashAmount' => optional($this->getCashAmount())->normalize(),
+            'ExtraCharges' => optional($this->getExtraCharges())->normalize(),
+            'ShipmentDimensions' => optional($this->getShipmentDimensions())->normalize(),
             'Comments' => $this->getComments(),
         ];
     }
