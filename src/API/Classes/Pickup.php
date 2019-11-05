@@ -66,7 +66,7 @@ class Pickup implements Normalize
     /**
      * @return string
      */
-    public function getPickupLocation()
+    public function getPickupLocation(): string
     {
         return $this->pickupLocation;
     }
@@ -214,7 +214,7 @@ class Pickup implements Normalize
     /**
      * @return string
      */
-    public function getVehicle()
+    public function getVehicle(): string
     {
         return $this->vehicle;
     }
@@ -231,7 +231,7 @@ class Pickup implements Normalize
     }
 
     /**
-     * @return array
+     * @return Shipment[]
      */
     public function getShipments(): array
     {
@@ -249,7 +249,7 @@ class Pickup implements Normalize
     }
 
     /**
-     * @return mixed
+     * @return PickupItemDetail[]
      */
     public function getPickItems(): array
     {
@@ -257,8 +257,7 @@ class Pickup implements Normalize
     }
 
     /**
-     * @param array $pickItems
-     * todo
+     * @param PickupItemDetail[] $pickItems
      * @return Pickup
      */
     public function setPickItems(array $pickItems)
@@ -276,12 +275,13 @@ class Pickup implements Normalize
     }
 
     /**
-     * Pending:more information about the pickup needs to be added,
+     * Pending: more information about the pickup needs to be added,
      * Ready: no further information is needed and the pickup request is ready to be assigned.
+     *
      * @param string $status
      * @return Pickup
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->status = $status;
         return $this;

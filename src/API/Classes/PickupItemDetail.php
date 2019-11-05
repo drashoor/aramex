@@ -6,7 +6,7 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
- * Class Pickup
+ * Class PickupItemDetail
  * @package DigitalCloud\Aramex\API\Classes
  */
 class PickupItemDetail implements Normalize
@@ -39,7 +39,7 @@ class PickupItemDetail implements Normalize
      * @param string $productGroup
      * @return PickupItemDetail
      */
-    public function setProductGroup(string $productGroup)
+    public function setProductGroup(string $productGroup): PickupItemDetail
     {
         $this->productGroup = $productGroup;
         return $this;
@@ -62,7 +62,7 @@ class PickupItemDetail implements Normalize
      * @param string $productType
      * @return PickupItemDetail
      */
-    public function setProductType(string $productType)
+    public function setProductType(string $productType): PickupItemDetail
     {
         $this->productType = $productType;
         return $this;
@@ -82,7 +82,7 @@ class PickupItemDetail implements Normalize
      * @param int $numberOfShipments
      * @return PickupItemDetail
      */
-    public function setNumberOfShipments(int $numberOfShipments)
+    public function setNumberOfShipments(int $numberOfShipments): PickupItemDetail
     {
         $this->numberOfShipments = $numberOfShipments;
         return $this;
@@ -122,7 +122,7 @@ class PickupItemDetail implements Normalize
      * @param string $payment
      * @return PickupItemDetail
      */
-    public function setPayment(string $payment)
+    public function setPayment(string $payment): PickupItemDetail
     {
         $this->payment = $payment;
         return $this;
@@ -143,7 +143,7 @@ class PickupItemDetail implements Normalize
      * @param Weight $shipmentWeight
      * @return PickupItemDetail
      */
-    public function setShipmentWeight(Weight $shipmentWeight)
+    public function setShipmentWeight(Weight $shipmentWeight): PickupItemDetail
     {
         $this->shipmentWeight = $shipmentWeight;
         return $this;
@@ -162,10 +162,10 @@ class PickupItemDetail implements Normalize
      * Pieces > 0
      * MAX = 100
      *
-     * @param mixed $shipmentVolume
+     * @param Volume $shipmentVolume
      * @return PickupItemDetail
      */
-    public function setShipmentVolume($shipmentVolume)
+    public function setShipmentVolume(Volume $shipmentVolume): PickupItemDetail
     {
         $this->shipmentVolume = $shipmentVolume;
         return $this;
@@ -185,7 +185,7 @@ class PickupItemDetail implements Normalize
      * @param int $numberOfPieces
      * @return PickupItemDetail
      */
-    public function setNumberOfPieces(int $numberOfPieces)
+    public function setNumberOfPieces(int $numberOfPieces): PickupItemDetail
     {
         $this->numberOfPieces = $numberOfPieces;
         return $this;
@@ -203,7 +203,7 @@ class PickupItemDetail implements Normalize
      * @param Money $cashAmount
      * @return PickupItemDetail
      */
-    public function setCashAmount(Money $cashAmount)
+    public function setCashAmount(Money $cashAmount): PickupItemDetail
     {
         $this->cashAmount = $cashAmount;
         return $this;
@@ -221,7 +221,7 @@ class PickupItemDetail implements Normalize
      * @param Money $extraCharges
      * @return PickupItemDetail
      */
-    public function setExtraCharges(Money $extraCharges)
+    public function setExtraCharges(Money $extraCharges): PickupItemDetail
     {
         $this->extraCharges = $extraCharges;
         return $this;
@@ -242,7 +242,7 @@ class PickupItemDetail implements Normalize
      * @param Dimension $shipmentDimensions
      * @return PickupItemDetail
      */
-    public function setShipmentDimensions(Dimension $shipmentDimensions)
+    public function setShipmentDimensions(Dimension $shipmentDimensions): PickupItemDetail
     {
         $this->shipmentDimensions = $shipmentDimensions;
         return $this;
@@ -262,7 +262,7 @@ class PickupItemDetail implements Normalize
      * @param string $comments
      * @return PickupItemDetail
      */
-    public function setComments(string $comments)
+    public function setComments(string $comments): PickupItemDetail
     {
         $this->comments = $comments;
         return $this;

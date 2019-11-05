@@ -174,5 +174,4 @@ class ProcessedShipment implements Normalize
             'ShipmentLabel' => $this->getShipmentLabel(),
         ];
     }
-
 }
