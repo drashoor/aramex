@@ -26,7 +26,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getLine1()
+    public function getLine1(): string
     {
         return $this->line1;
     }
