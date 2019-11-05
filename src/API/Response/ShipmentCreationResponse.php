@@ -5,7 +5,7 @@ namespace DigitalCloud\Aramex\API\Response;
 use DigitalCloud\Aramex\API\Classes\Notification;
 use DigitalCloud\Aramex\API\Classes\Shipment;
 
-class ShippingResponse extends Response
+class ShipmentCreationResponse extends Response
 {
     private $shipments;
 
@@ -46,11 +46,10 @@ class ShippingResponse extends Response
 
     /**
      * @param object $obj
-     * @return ShippingResponse
+     * @return ShipmentCreationResponse
      */
     public static function make($obj)
     {
         return (new self())->parse($obj);
     }
-
 }

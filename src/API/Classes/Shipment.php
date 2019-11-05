@@ -33,7 +33,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getReference1()
+    public function getReference1(): string
     {
         return $this->reference1;
     }
@@ -52,7 +52,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getReference2()
+    public function getReference2(): string
     {
         return $this->reference2;
     }
@@ -71,7 +71,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getReference3()
+    public function getReference3(): string
     {
         return $this->reference3;
     }
@@ -90,7 +90,7 @@ class Shipment implements Normalize
     /**
      * @return Party
      */
-    public function getShipper()
+    public function getShipper(): Party
     {
         return $this->shipper;
     }
@@ -108,7 +108,7 @@ class Shipment implements Normalize
     /**
      * @return Party
      */
-    public function getConsignee()
+    public function getConsignee(): Party
     {
         return $this->consignee;
     }
@@ -126,7 +126,7 @@ class Shipment implements Normalize
     /**
      * @return Party
      */
-    public function getThirdParty()
+    public function getThirdParty(): Party
     {
         return $this->thirdParty;
     }
@@ -182,7 +182,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getComments()
+    public function getComments(): string
     {
         return $this->comments;
     }
@@ -201,7 +201,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getPickupLocation()
+    public function getPickupLocation(): string
     {
         return $this->pickupLocation;
     }
@@ -220,7 +220,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getOperationsInstructions()
+    public function getOperationsInstructions(): string
     {
         return $this->operationsInstructions;
     }
@@ -239,7 +239,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getAccountingInstructions()
+    public function getAccountingInstructions(): string
     {
         return $this->accountingInstructions;
     }
@@ -258,7 +258,7 @@ class Shipment implements Normalize
     /**
      * @return ShipmentDetails
      */
-    public function getDetails()
+    public function getDetails(): ShipmentDetails
     {
         return $this->details;
     }
@@ -276,7 +276,7 @@ class Shipment implements Normalize
     /**
      * @return Attachment[]
      */
-    public function getAttachments()
+    public function getAttachments(): array
     {
         return $this->attachments;
     }
@@ -305,7 +305,7 @@ class Shipment implements Normalize
     /**
      * @return string
      */
-    public function getForeignHAWB()
+    public function getForeignHAWB(): string
     {
         return $this->foreignHAWB;
     }
@@ -326,7 +326,7 @@ class Shipment implements Normalize
      * 0 by Default
      * @return int
      */
-    public function getTransportType()
+    public function getTransportType(): int
     {
         return $this->transportType;
     }
@@ -345,7 +345,7 @@ class Shipment implements Normalize
      * A valid HAWB number
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -365,7 +365,7 @@ class Shipment implements Normalize
      * To add Shipments to existing pickups.
      * @return string
      */
-    public function getPickupGUID()
+    public function getPickupGUID(): string
     {
         return $this->pickupGUID;
     }

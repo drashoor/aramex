@@ -12,7 +12,7 @@ class Notification
     /**
      * @return string
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -30,7 +30,7 @@ class Notification
     /**
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }

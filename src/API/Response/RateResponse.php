@@ -1,8 +1,6 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Response;
-
 
 use DigitalCloud\Aramex\API\Classes\Money;
 

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Requests;
-
 
 use DigitalCloud\Aramex\API\Classes\ClientInfo;
 use DigitalCloud\Aramex\API\Classes\Transaction;

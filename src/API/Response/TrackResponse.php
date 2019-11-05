@@ -1,8 +1,6 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Response;
-
 
 class TrackResponse extends Response
 {

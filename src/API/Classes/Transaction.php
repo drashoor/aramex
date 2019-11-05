@@ -16,7 +16,7 @@ class Transaction implements Normalize
     /**
      * @return string
      */
-    public function getReference1()
+    public function getReference1(): string
     {
         return $this->reference1;
     }
@@ -34,7 +34,7 @@ class Transaction implements Normalize
     /**
      * @return string
      */
-    public function getReference2()
+    public function getReference2(): string
     {
         return $this->reference1;
     }
@@ -52,7 +52,7 @@ class Transaction implements Normalize
     /**
      * @return string
      */
-    public function getReference3()
+    public function getReference3(): string
     {
         return $this->reference3;
     }
@@ -70,7 +70,7 @@ class Transaction implements Normalize
     /**
      * @return string
      */
-    public function getReference4()
+    public function getReference4(): string
     {
         return $this->reference4;
     }
@@ -88,7 +88,7 @@ class Transaction implements Normalize
     /**
      * @return string
      */
-    public function getReference5()
+    public function getReference5(): string
     {
         return $this->reference5;
     }
