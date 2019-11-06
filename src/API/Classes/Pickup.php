@@ -7,7 +7,15 @@ use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
  * Required Elements:
- * Pickup Address, Pickup Contact, Pickup Location, Ready time, Last Pickup time, Closing Time, Reference 1, Pickup Items and Status.
+ * Pickup Address
+ * Pickup Contact
+ * Pickup Location
+ * Ready time
+ * Last Pickup time
+ * Closing Time
+ * Reference 1
+ * Pickup Items
+ * Status
  *
  * Class Pickup
  * @package DigitalCloud\Aramex\API\Classes
@@ -104,9 +112,9 @@ class Pickup implements Normalize
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getReadyTime()
+    public function getReadyTime(): int
     {
         return $this->readyTime;
     }
@@ -114,19 +122,20 @@ class Pickup implements Normalize
     /**
      * Ready time should always be before latest and closingtime.
      * Date should not be before the current day or more than seven days in advance of the current date.
-     * @param DateTime $readyTime
+     *
+     * @param string $readyTime
      * @return Pickup
      */
-    public function setReadyTime(DateTime $readyTime)
+    public function setReadyTime(int $readyTime)
     {
         $this->readyTime = $readyTime;
         return $this;
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getLastPickupTime(): DateTime
+    public function getLastPickupTime()
     {
         return $this->lastPickupTime;
     }
@@ -252,6 +261,16 @@ class Pickup implements Normalize
     public function setShipments(array $shipments)
     {
         $this->shipments = $shipments;
+        return $this;
+    }
+
+    /**
+     * @param Shipment $shipment
+     * @return Pickup
+     */
+    public function addShipment(Shipment $shipment): Pickup
+    {
+        $this->shipments[] = $shipment;
         return $this;
     }
 

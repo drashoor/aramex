@@ -31,7 +31,7 @@ class PickupCreation extends API implements Normalize
     {
         $this->validate();
 
-        return PickupCreationResponse::make($this->soapClient->CreateShipments($this->normalize()));
+        return PickupCreationResponse::make($this->soapClient->CreatePickup($this->normalize()));
     }
 
     protected function validate()
