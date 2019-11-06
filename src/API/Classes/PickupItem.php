@@ -92,7 +92,7 @@ class PickupItem implements Normalize
     /**
      * @return string
      */
-    public function getPackageType(): string
+    public function getPackageType(): ?string
     {
         return $this->packageType;
     }
@@ -105,7 +105,7 @@ class PickupItem implements Normalize
      * @param string $packageType
      * @return PickupItem
      */
-    public function setPackageType(string $packageType)
+    public function setPackageType(string $packageType): PickupItem
     {
         $this->packageType = $packageType;
         return $this;
@@ -153,7 +153,7 @@ class PickupItem implements Normalize
     /**
      * @return Volume todo
      */
-    public function getShipmentVolume()
+    public function getShipmentVolume(): ?Volume
     {
         return $this->shipmentVolume;
     }
@@ -195,7 +195,7 @@ class PickupItem implements Normalize
     /**
      * @return Money
      */
-    public function getCashAmount(): Money
+    public function getCashAmount(): ?Money
     {
         return $this->cashAmount;
     }
@@ -213,7 +213,7 @@ class PickupItem implements Normalize
     /**
      * @return Money
      */
-    public function getExtraCharges(): Money
+    public function getExtraCharges(): ?Money
     {
         return $this->extraCharges;
     }
@@ -231,7 +231,7 @@ class PickupItem implements Normalize
     /**
      * @return Dimension
      */
-    public function getShipmentDimensions(): Dimension
+    public function getShipmentDimensions(): ?Dimension
     {
         return $this->shipmentDimensions;
     }
@@ -252,7 +252,7 @@ class PickupItem implements Normalize
     /**
      * @return string
      */
-    public function getComments(): string
+    public function getComments(): ?string
     {
         return $this->comments;
     }
@@ -280,8 +280,8 @@ class PickupItem implements Normalize
             'NumberOfShipments' => $this->getNumberOfShipments(),
             'PackageType' => $this->getPackageType(),
             'Payment' => $this->getPayment(),
-            'ShipmentWeight' => $this->getShipmentWeight(),
-            'ShipmentVolume' => $this->getShipmentVolume(),
+            'ShipmentWeight' => optional($this->getShipmentWeight())->normalize(),
+            'ShipmentVolume' => optional($this->getShipmentVolume())->normalize(),
             'NumberOfPieces' => $this->getNumberOfPieces(),
             'CashAmount' => optional($this->getCashAmount())->normalize(),
             'ExtraCharges' => optional($this->getExtraCharges())->normalize(),

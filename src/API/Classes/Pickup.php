@@ -94,18 +94,18 @@ class Pickup implements Normalize
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getPickupDate()
+    public function getPickupDate(): int
     {
         return $this->pickupDate;
     }
 
     /**
-     * @param mixed $pickupDate
+     * @param int $pickupDate
      * @return Pickup
      */
-    public function setPickupDate($pickupDate)
+    public function setPickupDate(int $pickupDate): Pickup
     {
         $this->pickupDate = $pickupDate;
         return $this;
@@ -133,36 +133,36 @@ class Pickup implements Normalize
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getLastPickupTime()
+    public function getLastPickupTime(): int
     {
         return $this->lastPickupTime;
     }
 
     /**
-     * @param mixed $lastPickupTime
+     * @param int $lastPickupTime
      * @return Pickup
      */
-    public function setLastPickupTime($lastPickupTime)
+    public function setLastPickupTime(int $lastPickupTime): Pickup
     {
         $this->lastPickupTime = $lastPickupTime;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getClosingTime()
+    public function getClosingTime(): int
     {
         return $this->closingTime;
     }
 
     /**
-     * @param mixed $closingTime
+     * @param int $closingTime
      * @return Pickup
      */
-    public function setClosingTime($closingTime)
+    public function setClosingTime(int $closingTime): Pickup
     {
         $this->closingTime = $closingTime;
         return $this;
@@ -171,7 +171,7 @@ class Pickup implements Normalize
     /**
      * @return string
      */
-    public function getComments(): string
+    public function getComments(): ?string
     {
         return $this->comments;
     }
@@ -209,7 +209,7 @@ class Pickup implements Normalize
     /**
      * @return string
      */
-    public function getReference2(): string
+    public function getReference2(): ?string
     {
         return $this->reference2;
     }
@@ -229,7 +229,7 @@ class Pickup implements Normalize
     /**
      * @return string
      */
-    public function getVehicle(): string
+    public function getVehicle(): ?string
     {
         return $this->vehicle;
     }
@@ -240,7 +240,7 @@ class Pickup implements Normalize
      * @param string $vehicle
      * @return Pickup
      */
-    public function setVehicle($vehicle)
+    public function setVehicle($vehicle): Pickup
     {
         $this->vehicle = $vehicle;
         return $this;
@@ -249,7 +249,7 @@ class Pickup implements Normalize
     /**
      * @return Shipment[]
      */
-    public function getShipments(): array
+    public function getShipments(): ?array
     {
         return $this->shipments;
     }
@@ -293,6 +293,16 @@ class Pickup implements Normalize
     }
 
     /**
+     * @param PickupItem $pickItems
+     * @return Pickup
+     */
+    public function addPickupItem(PickupItem $pickItems): Pickup
+    {
+        $this->pickItems[] = $pickItems;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getStatus(): string
@@ -317,8 +327,8 @@ class Pickup implements Normalize
     public function normalize(): array
     {
         return [
-            'PickupAddress' => $this->getPickupAddress(),
-            'PickupContact' => $this->getPickupContact(),
+            'PickupAddress' => $this->getPickupAddress()->normalize(),
+            'PickupContact' => $this->getPickupContact()->normalize(),
             'PickupLocation' => $this->getPickupLocation(),
             'PickupDate' => $this->getPickupDate(),
             'ReadyTime' => $this->getReadyTime(),
@@ -332,7 +342,7 @@ class Pickup implements Normalize
                 /** @var Shipment $item */
                 return $item->normalize();
             }, $this->getShipments()) : [],
-            'PickItems' => $this->getPickItems() ? array_map(function ($item) {
+            'PickupItems' => $this->getPickItems() ? array_map(function ($item) {
                 /** @var PickupItem $item */
                 return $item->normalize();
             }, $this->getPickItems()) : [],

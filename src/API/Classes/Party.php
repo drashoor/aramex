@@ -24,7 +24,7 @@ class Party implements Normalize
     /**
      * @return string
      */
-    public function getReference1(): string
+    public function getReference1(): ?string
     {
         return $this->reference1;
     }
@@ -44,7 +44,7 @@ class Party implements Normalize
     /**
      * @return string
      */
-    public function getReference2()
+    public function getReference2(): ?string
     {
         return $this->reference2;
     }
@@ -64,7 +64,7 @@ class Party implements Normalize
     /**
      * @return string
      */
-    public function getAccountNumber()
+    public function getAccountNumber(): ?string
     {
         return $this->accountNumber;
     }

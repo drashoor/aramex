@@ -53,9 +53,9 @@ class Shipment implements Normalize
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getReference2(): string
+    public function getReference2(): ?string
     {
         return $this->reference2;
     }
@@ -73,9 +73,9 @@ class Shipment implements Normalize
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getReference3(): string
+    public function getReference3(): ?string
     {
         return $this->reference3;
     }
@@ -131,7 +131,7 @@ class Shipment implements Normalize
     /**
      * @return Party
      */
-    public function getThirdParty(): Party
+    public function getThirdParty(): ?Party
     {
         return $this->thirdParty;
     }
@@ -187,9 +187,9 @@ class Shipment implements Normalize
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getComments(): string
+    public function getComments(): ?string
     {
         return $this->comments;
     }
@@ -227,9 +227,9 @@ class Shipment implements Normalize
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOperationsInstructions(): string
+    public function getOperationsInstructions(): ?string
     {
         return $this->operationsInstructions;
     }
@@ -247,9 +247,9 @@ class Shipment implements Normalize
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAccountingInstructions(): string
+    public function getAccountingInstructions(): ?string
     {
         return $this->accountingInstructions;
     }
@@ -287,7 +287,7 @@ class Shipment implements Normalize
     /**
      * @return Attachment[]
      */
-    public function getAttachments(): array
+    public function getAttachments(): ?array
     {
         return $this->attachments;
     }
@@ -314,9 +314,9 @@ class Shipment implements Normalize
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getForeignHAWB(): string
+    public function getForeignHAWB(): ?string
     {
         return $this->foreignHAWB;
     }
@@ -355,9 +355,9 @@ class Shipment implements Normalize
 
     /**
      * A valid HAWB number
-     * @return string
+     * @return string|null
      */
-    public function getNumber(): string
+    public function getNumber(): ?string
     {
         return $this->number;
     }
@@ -379,9 +379,9 @@ class Shipment implements Normalize
     /**
      * To add Shipments to existing pickups.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupGUID(): string
+    public function getPickupGUID(): ?string
     {
         return $this->pickupGUID;
     }

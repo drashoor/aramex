@@ -48,6 +48,18 @@ class ProcessedPickup implements Normalize
     }
 
     /**
+     *  A reference number that has been allocated to the submitted pickup.
+     *
+     * @param string $guid
+     * @return ProcessedPickup
+     */
+    public function setGUID(string $guid): ProcessedPickup
+    {
+        $this->guid = $guid;
+        return $this;
+    }
+
+    /**
      * A unique identifier that gets assigned to the submitted pickup request after being saved.
      * This identifier can be used in the cancellation request at a later stage.
      *
@@ -57,6 +69,7 @@ class ProcessedPickup implements Normalize
     public function setReference3(string $guid): ProcessedPickup
     {
         $this->guid = $guid;
+        return $this;
     }
 
     /**
@@ -74,6 +87,7 @@ class ProcessedPickup implements Normalize
     public function setReference1(string $reference1): ProcessedPickup
     {
         $this->reference1 = $reference1;
+        return $this;
     }
 
     /**
@@ -85,12 +99,13 @@ class ProcessedPickup implements Normalize
     }
 
     /**
-     * @param string $reference2
+     * @param string|null $reference2
      * @return ProcessedPickup
      */
-    public function setReference2(string $reference2): ProcessedPickup
+    public function setReference2(?string $reference2): ProcessedPickup
     {
         $this->reference2 = $reference2;
+        return $this;
     }
 
     /**

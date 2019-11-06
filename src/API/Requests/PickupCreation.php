@@ -34,13 +34,6 @@ class PickupCreation extends API implements Normalize
         return PickupCreationResponse::make($this->soapClient->CreatePickup($this->normalize()));
     }
 
-    protected function validate()
-    {
-        if (!sizeof($this->pickup)) {
-            throw new Exception('Shipments are not provided');
-        }
-    }
-
     /**
      * @return Pickup
      */
@@ -80,7 +73,7 @@ class PickupCreation extends API implements Normalize
     public function normalize(): array
     {
         return array_merge([
-            'Pickup' => $this->getPickup(),
+            'Pickup' => $this->getPickup()->normalize(),
             'LabelInfo' => optional($this->getLabelInfo())->normalize(),
         ], parent::normalize());
     }
