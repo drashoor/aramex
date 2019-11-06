@@ -7,7 +7,6 @@ namespace DigitalCloud\Aramex\API\Requests;
 use DigitalCloud\Aramex\API\Classes\LabelInfo;
 use DigitalCloud\Aramex\API\Classes\Shipment;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
-use DigitalCloud\Aramex\API\Response\RateResponse;
 use DigitalCloud\Aramex\API\Response\ShippingResponse;
 use Exception;
 
@@ -20,7 +19,7 @@ class Shipping extends API implements Normalize
     protected $test_wsdl = 'https://ws.aramex.net/ShippingAPI.V2/Shipping/Service_1_0.svc?wsdl';
 
     /**
-     * @return RateResponse
+     * @return ShippingResponse
      * @throws Exception
      */
     public function create()
