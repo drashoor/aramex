@@ -1,11 +1,16 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
-
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Money is a complex element, consisting of two child elements (Currency Code and Value).
+ * These apply to every element that is defined by the Data Type “Money“.
+ *
+ * Class Money
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Money implements Normalize
 {
     private $currencyCode;

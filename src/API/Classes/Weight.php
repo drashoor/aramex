@@ -1,11 +1,16 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
-
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Weight is a complex element, consisting of two child elements (Unit and Value).
+ * These apply to every element that is defined by the Data Type “Weight“.
+ *
+ * Class Weight
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Weight implements Normalize
 {
     private $unit;
@@ -40,7 +45,7 @@ class Weight implements Normalize
 
     /**
      * Shipment weight.
-    If the Data Entity ‘Dimensions’ are filled, charging weight is compared to actual and the highest value is filled here.
+     * If the Data Entity ‘Dimensions’ are filled, charging weight is compared to actual and the highest value is filled here.
      * @param float $value
      * @return $this
      */

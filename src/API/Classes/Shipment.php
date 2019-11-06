@@ -6,6 +6,8 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * Required – Shipper, Consignee, and Details.
+ *
  * Class Shipment
  * @package DigitalCloud\Aramex\API\Classes
  */

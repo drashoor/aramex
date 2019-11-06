@@ -3,7 +3,12 @@
 
 namespace DigitalCloud\Aramex\API\Classes;
 
-
+/**
+ * Contains details of the request errors or success.
+ *
+ * Class Notification
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Notification
 {
     private $code;
@@ -18,6 +23,8 @@ class Notification
     }
 
     /**
+     * To Identify the notification category.
+     *
      * @param string $code
      * @return $this
      */
@@ -36,6 +43,8 @@ class Notification
     }
 
     /**
+     * Deeper description of the Notification.
+     *
      * @param string $message
      * @return $this
      */
@@ -67,6 +76,8 @@ class Notification
 
     public static function parse($item)
     {
-        return (new self())->setCode(object_get($item, 'Code'))->setMessage(object_get($item, 'Message'));
+        return (new self())
+            ->setCode(object_get($item, 'Code'))
+            ->setMessage(object_get($item, 'Message'));
     }
 }

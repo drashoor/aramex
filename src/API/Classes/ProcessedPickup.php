@@ -6,6 +6,8 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * When a request is processed successfully, the elements in processed pickup appear with details of the pickup.
+ *
  * Class ProcessedPickup
  * @package DigitalCloud\Aramex\API\Classes
  */
@@ -26,6 +28,8 @@ class ProcessedPickup implements Normalize
     }
 
     /**
+     *  A reference number that has been allocated to the submitted pickup.
+     *
      * @param string $id
      * @return ProcessedPickup
      */
@@ -44,6 +48,9 @@ class ProcessedPickup implements Normalize
     }
 
     /**
+     * A unique identifier that gets assigned to the submitted pickup request after being saved.
+     * This identifier can be used in the cancellation request at a later stage.
+     *
      * @param string $guid
      * @return ProcessedPickup
      */

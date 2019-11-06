@@ -5,6 +5,8 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * Required Elements: Product Group, Number of Shipments, Payment.
+ *
  * Class PickupItem
  * @package DigitalCloud\Aramex\API\Classes
  */

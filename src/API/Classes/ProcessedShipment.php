@@ -6,6 +6,9 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * When a request is processed successfully,
+ * the elements in processed shipment appear with details on the shipment.
+ *
  * Class ProcessedShipment
  * @package DigitalCloud\Aramex\API\Classes
  */
@@ -29,6 +32,8 @@ class ProcessedShipment implements Normalize
     }
 
     /**
+     * The AWB ID generated
+     *
      * @param string $id
      * @return ProcessedShipment
      */
@@ -47,6 +52,8 @@ class ProcessedShipment implements Normalize
     }
 
     /**
+     * The reference filled in the Shipment element
+     *
      * @param string $reference1
      * @return ProcessedShipment
      */
@@ -98,6 +105,8 @@ class ProcessedShipment implements Normalize
     }
 
     /**
+     * Filled in the Shipment Element must be unique for every shipment in the system.
+     *
      * @param string $foreignHAWB
      * @return ProcessedShipment
      */

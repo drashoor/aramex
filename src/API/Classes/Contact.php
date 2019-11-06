@@ -5,6 +5,17 @@ namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Depending on the method chosen, certain elements are required and others optional.
+ * Shipment Creation:
+ * Required – Person Name, Company Name, Phone Number1, and Email Address.
+ *
+ * Pickup Creation:
+ * Required – Person Name, Company Name, Phone Number1, and Cell Phone.
+ *
+ * Class Contact
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Contact implements Normalize
 {
     private $department;

@@ -5,6 +5,13 @@ namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Attachment is a complex element, consisting of three child elements (File Name, File Extension and File Contents).
+ * These apply to every element that is defined by the Data Type “Attachment“.
+ *
+ * Class Attachment
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Attachment implements Normalize
 {
     private $fileName;

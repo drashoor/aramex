@@ -5,6 +5,7 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * Returns the Label as URL with Label URL element or as a file with Label File Contents.
  * Class ShipmentLabel
  * @package DigitalCloud\Aramex\API\Classes
  */

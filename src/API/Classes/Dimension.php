@@ -1,11 +1,16 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
-
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Dimensions is a complex element, consisting of four child elements (Unit, Length, Width and Height).
+ * These apply to every element that is defined by the Data Type “Dimensions“.
+ *
+ * Class Dimension
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Dimension implements Normalize
 {
     private $length;
@@ -80,8 +85,8 @@ class Dimension implements Normalize
 
     /**
      * Measurement Unit, If any of the Dimensional values are filled then the rest must be filled.
-     CM = Centimeter
-     M = Meter
+     * CM = Centimeter
+     * M = Meter
      * @param string $unit
      * @return $this
      */

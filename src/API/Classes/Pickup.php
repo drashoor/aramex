@@ -6,6 +6,9 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * Required Elements:
+ * Pickup Address, Pickup Contact, Pickup Location, Ready time, Last Pickup time, Closing Time, Reference 1, Pickup Items and Status.
+ *
  * Class Pickup
  * @package DigitalCloud\Aramex\API\Classes
  */

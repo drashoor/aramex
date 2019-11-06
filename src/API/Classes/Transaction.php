@@ -5,6 +5,12 @@ namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Contains the data sent in the request by the user, used mainly for identification purposes.
+ *
+ * Class Transaction
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Transaction implements Normalize
 {
     private $reference1;

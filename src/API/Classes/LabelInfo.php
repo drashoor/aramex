@@ -5,6 +5,12 @@ namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Allows you to be able to generate labels.
+ *
+ * Class LabelInfo
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class LabelInfo implements Normalize
 {
     private $reportId;

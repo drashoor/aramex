@@ -1,11 +1,21 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
-
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * The Client Info element is present in all the methods of this service.
+ * All its child elements are required to be filled.
+ * The user name and password are validated to allow access to the service.
+ * Version element, is the Version of the API the customer is using, which needs to be specified in the request
+ * Account Number, Pin, Entity and Country Code are all needed to verify the users account and obtain vital information from it,
+ * such as the ability to create third party shipments among other features provided for each account.
+ * Source, used for data mining purposes.
+ *
+ * Class ClientInfo
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class ClientInfo implements Normalize
 {
     private $accountCountryCode;

@@ -5,6 +5,9 @@ namespace DigitalCloud\Aramex\API\Classes;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
 /**
+ * Volume is a complex element, consisting of two child elements (Unit and Value).
+ * These apply to every element that is defined by the Data Type “Volume“.
+ *
  * Class Volume
  * @package DigitalCloud\Aramex\API\Classes
  */

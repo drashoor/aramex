@@ -5,6 +5,14 @@ namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * Party is a complex element, consisting of three child elements (Reference 1, Reference 2, and Account Number)
+ * and encompasses from its data type level the Address and Contact Elements.
+ *
+ * This data type is applied on the Shipper, Consignee and Third Party complex elements.
+ * Class Party
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Party implements Normalize
 {
     private $reference1;

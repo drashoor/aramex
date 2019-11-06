@@ -1,14 +1,19 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
-
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * ShipmentItem is a complex element consisting of four child elements.
+ * Every Shipment can consist of several items and each item has the following elements:
+ * package type, quantity, weight, comments and reference.
+ *
+ * Class ShipmentItem
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class ShipmentItem implements Normalize
 {
-
     private $packageType;
     private $quantity;
     private $weight;

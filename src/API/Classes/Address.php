@@ -5,6 +5,12 @@ namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ * The Address element contains several child elements that are validated before the request can be submitted successfully.
+ *
+ * Class Address
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class Address implements Normalize
 {
     private $line1;
