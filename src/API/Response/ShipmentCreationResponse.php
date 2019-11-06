@@ -5,6 +5,15 @@ namespace DigitalCloud\Aramex\API\Response;
 use DigitalCloud\Aramex\API\Classes\Notification;
 use DigitalCloud\Aramex\API\Classes\Shipment;
 
+/**
+ * Informs the user on the status of their submitted shipment.
+ * Success = an AWB number is supplied
+ * Failure = an error message specifically states the location of the error and its nature.
+ * The Transaction Parameter is sent as filled in the request for identification purposes.
+ *
+ * Class ShipmentCreationResponse
+ * @package DigitalCloud\Aramex\API\Response
+ */
 class ShipmentCreationResponse extends Response
 {
     private $shipments;

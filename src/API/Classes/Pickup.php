@@ -306,8 +306,14 @@ class Pickup implements Normalize
             'Reference1' => $this->getReference1(),
             'Reference2' => $this->getReference2(),
             'Vehicle' => $this->getVehicle(),
-            'Shipments' => $this->getShipments(),
-            'PickItems' => $this->getPickItems(),
+            'Shipments' => $this->getShipments() ? array_map(function ($item) {
+                /** @var Shipment $item */
+                return $item->normalize();
+            }, $this->getShipments()) : [],
+            'PickItems' => $this->getPickItems() ? array_map(function ($item) {
+                /** @var PickupItem $item */
+                return $item->normalize();
+            }, $this->getPickItems()) : [],
             'Status' => $this->getStatus(),
         ];
     }

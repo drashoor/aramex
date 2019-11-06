@@ -5,7 +5,15 @@ namespace DigitalCloud\Aramex\API\Requests;
 use DigitalCloud\Aramex\API\Classes\Address;
 use DigitalCloud\Aramex\API\Classes\ScheduledDelivery as Resource;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
+use DigitalCloud\Aramex\API\Response\ScheduledDeliveryResponse;
+use Exception;
 
+/**
+ * This method allows you to schedule the delivery of a shipment at a specified time and place (Longitude and Latitude)
+ *
+ * Class ScheduledDelivery
+ * @package DigitalCloud\Aramex\API\Requests
+ */
 class ScheduledDelivery extends API implements Normalize
 {
     protected $live_wsdl = 'https://ws.aramex.net/shippingapi.v2/shipping/service_1_0.svc';
@@ -22,6 +30,17 @@ class ScheduledDelivery extends API implements Normalize
     private $reference1;
     private $reference2;
     private $reference3;
+
+    /**
+     * @return ScheduledDeliveryResponse
+     * @throws Exception
+     */
+    public function create(): ScheduledDeliveryResponse
+    {
+        $this->validate();
+
+        return ScheduledDeliveryResponse::make($this->soapClient->CreateShipments($this->normalize()));
+    }
 
     /**
      * @return Address

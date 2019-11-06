@@ -3,7 +3,15 @@
 namespace DigitalCloud\Aramex\API\Requests;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
+use DigitalCloud\Aramex\API\Response\ReserveRangeResponse;
+use Exception;
 
+/**
+ * This method allows you to reserve a range of shipment numbers.
+ *
+ * Class ReserveRange
+ * @package DigitalCloud\Aramex\API\Requests
+ */
 class ReserveRange extends API implements Normalize
 {
     protected $live_wsdl = 'https://ws.aramex.net/shippingapi.v2/shipping/service_1_0.svc';
@@ -12,6 +20,17 @@ class ReserveRange extends API implements Normalize
     private $entity;
     private $productGroup;
     private $count;
+
+    /**
+     * @return ReserveRangeResponse
+     * @throws Exception
+     */
+    public function create(): ReserveRangeResponse
+    {
+        $this->validate();
+
+        return ReserveRangeResponse::make($this->soapClient->CreateShipments($this->normalize()));
+    }
 
     /**
      * @return string

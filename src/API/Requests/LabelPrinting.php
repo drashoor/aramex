@@ -4,8 +4,12 @@ namespace DigitalCloud\Aramex\API\Requests;
 
 use DigitalCloud\Aramex\API\Classes\LabelInfo;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
+use DigitalCloud\Aramex\API\Response\LabelPrintingResponse;
+use Exception;
 
 /**
+ * This method allows the user to print a label for an existing shipment.
+ *
  * The required nodes to be filled are ClientInfo and ShipmentNumber.
  * If there is a duplicate Shipment Number then the ProductGroup and Origin Entity elements are required.
  *
@@ -23,6 +27,17 @@ class LabelPrinting extends API implements Normalize
     private $labelInfo;
 
     /**
+     * @return LabelPrintingResponse
+     * @throws Exception
+     */
+    public function create(): LabelPrintingResponse
+    {
+        $this->validate();
+
+        return LabelPrintingResponse::make($this->soapClient->CreateShipments($this->normalize()));
+    }
+
+    /**
      * @return string
      */
     public function getShipmentNumber(): string
@@ -34,7 +49,7 @@ class LabelPrinting extends API implements Normalize
      * @param string $shipmentNumber
      * @return LabelPrinting
      */
-    public function setShipmentNumber(string $shipmentNumber)
+    public function setShipmentNumber(string $shipmentNumber): LabelPrinting
     {
         $this->shipmentNumber = $shipmentNumber;
         return $this;
@@ -52,7 +67,7 @@ class LabelPrinting extends API implements Normalize
      * @param string $productGroup
      * @return LabelPrinting
      */
-    public function setProductGroup(string $productGroup)
+    public function setProductGroup(string $productGroup): LabelPrinting
     {
         $this->productGroup = $productGroup;
         return $this;
@@ -70,7 +85,7 @@ class LabelPrinting extends API implements Normalize
      * @param string $originEntity
      * @return LabelPrinting
      */
-    public function setOriginEntity(string $originEntity)
+    public function setOriginEntity(string $originEntity): LabelPrinting
     {
         $this->originEntity = $originEntity;
         return $this;
@@ -88,7 +103,7 @@ class LabelPrinting extends API implements Normalize
      * @param LabelInfo $labelInfo
      * @return LabelPrinting
      */
-    public function setLabelInfo(LabelInfo $labelInfo)
+    public function setLabelInfo(LabelInfo $labelInfo): LabelPrinting
     {
         $this->labelInfo = $labelInfo;
         return $this;

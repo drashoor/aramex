@@ -3,9 +3,40 @@
 
 namespace DigitalCloud\Aramex\API\Response;
 
+use DigitalCloud\Aramex\API\Classes\ProcessedPickup;
 
+/**
+ * Informs the user on the status of their submitted pickup request.
+ *
+ * Success = a Collection (Pickup) reference is supplied
+ * Failure = an error message specifically states the location of the error and its nature.
+ * The Transaction Parameter is sent as filled in the request for identification purposes.
+ *
+ * Class PickupCreationResponse
+ * @package DigitalCloud\Aramex\API\Response
+ */
 class PickupCreationResponse extends Response
 {
+    private $precessedPickup;
+
+    /**
+     * @return ProcessedPickup
+     */
+    public function getPrecessedPickup(): ProcessedPickup
+    {
+        return $this->precessedPickup;
+    }
+
+    /**
+     * @param ProcessedPickup $precessedPickup
+     * @return PickupCreationResponse
+     */
+    public function setPrecessedPickup(ProcessedPickup $precessedPickup): PickupCreationResponse
+    {
+        $this->precessedPickup = $precessedPickup;
+        return $this;
+    }
+
     /**
      * @param object $obj
      * @return self

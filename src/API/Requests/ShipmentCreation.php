@@ -7,9 +7,16 @@ namespace DigitalCloud\Aramex\API\Requests;
 use DigitalCloud\Aramex\API\Classes\LabelInfo;
 use DigitalCloud\Aramex\API\Classes\Shipment;
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
-use DigitalCloud\Aramex\API\Response\ShippingResponse;
+use DigitalCloud\Aramex\API\Response\ShipmentCreationResponse;
 use Exception;
 
+/**
+ * This method allows users to create shipments on Aramex’s system.
+ * The required nodes to be filled are: Client Info and Shipments.
+ *
+ * Class ShipmentCreation
+ * @package DigitalCloud\Aramex\API\Requests
+ */
 class ShipmentCreation extends API implements Normalize
 {
     private $shipments;
@@ -19,14 +26,14 @@ class ShipmentCreation extends API implements Normalize
     protected $test_wsdl = 'https://ws.dev.aramex.net/shippingapi.v2/shipping/service_1_0.svc';
 
     /**
-     * @return ShippingResponse
+     * @return ShipmentCreationResponse
      * @throws Exception
      */
-    public function create()
+    public function create(): ShipmentCreationResponse
     {
         $this->validate();
 
-        return ShippingResponse::make($this->soapClient->CreateShipments($this->normalize()));
+        return ShipmentCreationResponse::make($this->soapClient->CreateShipments($this->normalize()));
     }
 
     protected function validate()
@@ -86,6 +93,7 @@ class ShipmentCreation extends API implements Normalize
     {
         return array_merge([
             'Shipments' => $this->getShipments() ? array_map(function ($item) {
+                /** @var Shipment $item */
                 return $item->normalize();
             }, $this->getShipments()) : [],
             'LabelInfo' => optional($this->getLabelInfo())->normalize(),

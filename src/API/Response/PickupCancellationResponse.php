@@ -3,7 +3,12 @@
 
 namespace DigitalCloud\Aramex\API\Response;
 
-
+/**
+ * Informs the user that the pickup was successfully canceled.
+ *
+ * Class PickupCancellationResponse
+ * @package DigitalCloud\Aramex\API\Response
+ */
 class PickupCancellationResponse extends Response
 {
     /**

@@ -111,7 +111,10 @@ class ProcessedPickup implements Normalize
             'GUID' => $this->getGUID(),
             'Reference1' => $this->getReference1(),
             'Reference2' => $this->getReference2(),
-            'ProcessedShipments' => $this->getProcessedShipments()
+            'ProcessedShipments' => $this->getProcessedShipments() ? array_map(function ($item) {
+                /** @var ProcessedPickup $item */
+                return $item->normalize();
+            }, $this->getProcessedShipments()) : [],
         ];
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Requests;
-
 
 use DigitalCloud\Aramex\API\Classes\LabelInfo;
 use DigitalCloud\Aramex\API\Classes\Pickup;
@@ -10,6 +8,13 @@ use DigitalCloud\Aramex\API\Interfaces\Normalize;
 use DigitalCloud\Aramex\API\Response\PickupCreationResponse;
 use Exception;
 
+/**
+ * This method allows users to create a pickup request.
+ * The nodes required to be filled are as follows: ClientInfo and Pickup.
+ *
+ * Class PickupCreation
+ * @package DigitalCloud\Aramex\API\Requests
+ */
 class PickupCreation extends API implements Normalize
 {
     private $pickup;
@@ -22,7 +27,7 @@ class PickupCreation extends API implements Normalize
      * @return PickupCreationResponse
      * @throws Exception
      */
-    public function create()
+    public function create(): PickupCreationResponse
     {
         $this->validate();
 
