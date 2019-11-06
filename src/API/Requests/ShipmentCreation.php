@@ -23,7 +23,7 @@ class ShipmentCreation extends API implements Normalize
     private $labelInfo;
 
     protected $live_wsdl = 'https://ws.aramex.net/shippingapi.v2/shipping/service_1_0.svc';
-    protected $test_wsdl = 'https://ws.dev.aramex.net/shippingapi.v2/shipping/service_1_0.svc';
+    protected $test_wsdl = 'https://ws.aramex.net/shippingapi.v2/shipping/service_1_0.svc';
 
     /**
      * @return ShipmentCreationResponse

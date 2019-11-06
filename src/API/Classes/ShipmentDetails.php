@@ -1,10 +1,14 @@
 <?php
 
-
 namespace DigitalCloud\Aramex\API\Classes;
 
 use DigitalCloud\Aramex\API\Interfaces\Normalize;
 
+/**
+ *
+ * Class ShipmentDetails
+ * @package DigitalCloud\Aramex\API\Classes
+ */
 class ShipmentDetails implements Normalize
 {
     private $dimensions;

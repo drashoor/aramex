@@ -53,7 +53,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getLine2(): string
+    public function getLine2(): ?string
     {
         return $this->line2;
     }
@@ -73,7 +73,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getLine3(): string
+    public function getLine3(): ?string
     {
         return $this->line3;
     }
@@ -95,7 +95,7 @@ class Address implements Normalize
      *
      * @return string
      */
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->city;
     }
@@ -116,7 +116,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getStateOfProvinceCode(): string
+    public function getStateOfProvinceCode(): ?string
     {
         return $this->stateOfProvinceCode;
     }
@@ -137,7 +137,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getPostCode(): string
+    public function getPostCode(): ?string
     {
         return $this->postCode;
     }
@@ -178,7 +178,7 @@ class Address implements Normalize
     /**
      * @return float
      */
-    public function getLongitude(): float
+    public function getLongitude(): ?float
     {
         return $this->longitude;
     }
@@ -196,7 +196,7 @@ class Address implements Normalize
     /**
      * @return float
      */
-    public function getLatitude(): float
+    public function getLatitude(): ?float
     {
         return $this->latitude;
     }
@@ -214,7 +214,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getBuildingNumber(): string
+    public function getBuildingNumber(): ?string
     {
         return $this->buildingNumber;
     }
@@ -232,7 +232,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getBuildingName(): string
+    public function getBuildingName(): ?string
     {
         return $this->buildingName;
     }
@@ -250,7 +250,7 @@ class Address implements Normalize
     /**
      * @return int
      */
-    public function getFloor(): int
+    public function getFloor(): ?int
     {
         return $this->floor;
     }
@@ -268,7 +268,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getApartment(): string
+    public function getApartment(): ?string
     {
         return $this->apartment;
     }
@@ -287,7 +287,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getPoBox(): string
+    public function getPoBox(): ?string
     {
         return $this->poBox;
     }
@@ -305,7 +305,7 @@ class Address implements Normalize
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
